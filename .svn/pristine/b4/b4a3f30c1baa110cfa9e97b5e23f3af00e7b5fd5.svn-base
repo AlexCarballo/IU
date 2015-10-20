@@ -1,0 +1,75 @@
+<?php
+//=================================================================================
+//Fichero:FuncionesComunes.php V2
+//Creado por: jrodeiro
+//Fecha: 29/9/2015
+//Funciones generales del proyecto AccessSkeleton 
+//=================================================================================
+
+//---------------------------------------------------------------------------------
+//Funcion: ConectarBD()
+//Creado por: jrodeiro
+//Fecha: 29/9/2015
+//Establece conexion con el gestor de bd, si no es posible informa y devuelve 0.
+//A continuacion selecciona la bd, si no es posible informa y devuelve 0.
+//---------------------------------------------------------------------------------
+function ConectarBD()
+{
+	if (!(mysql_connect('localhost','AccessSkeleton','AccessSkeleton')))
+	{
+		echo 'No es posible conectar al gestor de bd';
+		return 0;
+	}
+	if (!(mysql_select_db('AccessSkeleton')))
+	{
+		echo 'No es posible seleccionar la bd';
+		return 0;
+	}
+}
+//---------------------------------------------------------------------------------
+//Funcion: CargaIdioma()
+//Creado por: jrodeiro
+//Fecha: 5/10/2015
+//Carga en un array el idioma de la aplicacion a partir de un fichero de idioma
+//Utiliza un array asociativo
+//---------------------------------------------------------------------------------
+function CargaIdioma()
+{
+
+	//incluimos el array de idioma correspondiente con el indicado en la session
+	switch ($_SESSION['idioma'])
+	{
+	case 'espanhol':
+		include '../models/ESPANHOL.php';
+		break;
+	case 'english':
+		include '../models/ENGLISH.php';
+		break;
+	DEFAULT:
+		include '../models/ESPANHOL.php';
+		break;
+	}
+	return $Idioma;
+}
+
+//---------------------------------------------------------------------------------
+//Funcion: ConPermisos()
+//Creado por: jrodeiro
+//Fecha: 5/10/2015
+//Comprueba si existe login registrado en el sistema, si no existe devuelve 0 
+//si existe devuelve 1
+//---------------------------------------------------------------------------------
+function ConPermisos()
+{
+if (isset($_SESSION['login']))
+	return 1;
+else
+	return 0;
+}
+
+//se inicializa la sesion
+session_start();
+//si no hay idioma se pone por defecto
+if (!(isset($_SESSION['idioma'])))
+                $_SESSION['idioma'] = 'ESPANHOL';
+?>
