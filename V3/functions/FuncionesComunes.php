@@ -64,6 +64,7 @@ function CargaIdioma()
 function ConPermisos()
 {
 session_start();
+//isset <- Determina si una variable está definida y no es NULL
 if (isset($_SESSION['login']))
 	return 1;
 else
