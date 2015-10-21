@@ -15,12 +15,12 @@
 //---------------------------------------------------------------------------------
 function ConectarBD()
 {
-	if (!(mysql_connect('localhost','AccessSkeleton','AccessSkeleton')))
+	if (!(mysql_connect('localhost','BD','BD')))
 	{
 		echo 'No es posible conectar al gestor de bd';
 		return 0;
 	}
-	if (!(mysql_select_db('AccessSkeleton')))
+	if (!(mysql_select_db('Servidor')))
 	{
 		echo 'No es posible seleccionar la bd';
 		return 0;
