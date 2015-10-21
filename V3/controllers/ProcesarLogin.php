@@ -41,6 +41,7 @@ if (mysql_num_rows($ResultadoExisteLogin)==1)
 		session_start();
 		$_SESSION['login'] = $login;
 		$_SESSION['idioma'] = 'ESPANHOL';
+		//header — Enviar encabezado sin formato HTTP
 		header('Location:../controllers/Menu.php');
 	}
 	else
