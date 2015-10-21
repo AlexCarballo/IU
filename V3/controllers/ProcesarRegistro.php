@@ -15,8 +15,8 @@ $apellidos= $_POST['apellidos'];
 $telefono= $_POST['telefono'];
 
 //Conectamos con el gestor de la bd
-mysql_connect('localhost','AccessSkeleton','AccessSkeleton') or die('error de conexion a la BD');
-mysql_select_db('AccessSkeleton') or die('error de selección de la BD');
+mysql_connect('localhost','BD','BD') or die('error de conexion a la BD');
+mysql_select_db('Servidor') or die('error de selección de la BD');
 
 
 //Comprobamos si ya existe ese login
