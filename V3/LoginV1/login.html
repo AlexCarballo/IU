@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<title>Login</title>
+		<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+
+	</head>
+	<body>
+		<div class="message warning">
+		<div class="inset">
+			<div class="login-head">
+				<h1>Login</h1>	
+			</div>
+				<form action='../controllers/ProcesarLogin.php' method='POST'>
+					<li>
+						<input type="text" class="text" value="Nombre de usuario" name="login" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Username';}"><a href="#" class=" icon user"></a>
+					</li>
+						<div class="clear"> </div>
+					<li>
+						<input type="password" value="Password" name="pass" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}"> <a href="#" class="icon lock"></a>
+					</li>
+					<div class="clear"> </div>
+					<div class="submit">
+							
+
+								<input type='submit' name='accion' value='Login'>
+
+							
+
+								  <div class="clear">  </div>	
+					</div>
+						
+				</form>
+				</div>					
+			</div>
+			</div>
+			<div class="clear"> </div>
+			<script>
+				function myFunction() {
+					window.location = "../index.html";
+				}
+			</script>		
+	</body>
+</html>
